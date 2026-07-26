@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: data-analyst-telegram-bot
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.13.0
+      - key: OPENAI_BASE_URL
+        value: https://aipipe.org/openai/v1
+      - key: OPENAI_API_KEY
+        value: eyJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6IjIxZjMwMDE2NDdAZHMuc3R1ZHkuaWl0bS5hYy5pbiIsImlhdCI6MTc4NDk4NTA3OSwiaXNzIjoiaHR0cHM6Ly9haXBpcGUub3JnIiwiYXVkIjoiYWlwaXBlLWFwaSIsImV4cCI6MTc4NTU4OTg3OX0.AbADHACeaN4Dofbfv-10OUwHG9HSHz0gdP3ogZ2Lack
+      - key: TELEGRAM_BOT_TOKEN
+        value: placeholder
+      - key: TELEGRAM_BOT_USERNAME
+        value: placeholder
+      - key: PUBLIC_BASE_URL
+        value: https://data-analyst-telegram-bot.onrender.com
